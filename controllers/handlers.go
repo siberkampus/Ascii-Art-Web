@@ -36,10 +36,10 @@ func Result(w http.ResponseWriter, r *http.Request) {
 
 	filenames := []string{"standard", "thinkertoy", "shadow"}
 	if len(checkbox) == 0 {
-		calculate.Yazdir(kelimeler, data, file_name)
+		calculate.Print(kelimeler, data, file_name)
 	} else {
 		for _, files := range filenames {
-			calculate.Yazdir(kelimeler, data, files)
+			calculate.Print(kelimeler, data, files)
 		}
 	}
 	view, err := template.ParseFiles("views/result/index.html", "views/result/header.html", "views/result/content.html","views/result/footer.html")

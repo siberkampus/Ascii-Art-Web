@@ -9,8 +9,8 @@
         <form action="/result" method="post">
            <div class="form-element">
             <h3>Ascii Art Web</h3>
-            <label for="Text">Metin</label>
-            <input type="text" name="arguman" placeholder="Metni Giriniz">
+            <label for="Text">Text</label>
+            <input type="text" name="arguman" placeholder="Enter Text">
            
             <label for="Font">Font</label>
             <select name="file">
@@ -22,9 +22,9 @@
         </div>
         <div class="printall">
             <input type="checkbox" id="check" name="check" >
-            <label>Hepsini Yazdır</label>
+            <label>Print All</label>
         </div>
-            <button type="submit">Yazdır</button>
+            <button type="submit">Print</button>
         </form>
         {{ template "footer"}}
 </body>

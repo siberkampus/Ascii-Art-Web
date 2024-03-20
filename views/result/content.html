@@ -8,11 +8,11 @@
         {{end}}
     </textarea>
     <form action="/redirectindex" method="get">
-        <button type="submit">Geri Dön</button>
+        <button type="submit">Go Back</button>
     </form>
     <form action="/download" method="get" >
         <input type="hidden"name="data" value="{{.result}}">
-        <button type="submit">İndir</button>
+        <button type="submit">Download</button>
     </form>
     {{ template "footer"}}
 </body>
