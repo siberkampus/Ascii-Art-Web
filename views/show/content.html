@@ -1,0 +1,31 @@
+{{ define "content"}}
+<body>
+    
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+   
+        <form action="/result" method="post">
+           <div class="form-element">
+            <h3>Ascii Art Web</h3>
+            <label for="Text">Metin</label>
+            <input type="text" name="arguman" placeholder="Metni Giriniz">
+           
+            <label for="Font">Font</label>
+            <select name="file">
+                <option value="standard">Standard</option>
+                <option value="thinkertoy">Thinkertoy</option>
+                <option value="shadow">Shadow</option>
+            </select>
+            <br>
+        </div>
+        <div class="printall">
+            <input type="checkbox" id="check" name="check" >
+            <label>Hepsini Yazdır</label>
+        </div>
+            <button type="submit">Yazdır</button>
+        </form>
+        {{ template "footer"}}
+</body>
+{{ end }}

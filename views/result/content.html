@@ -1,0 +1,19 @@
+{{ define "content"}}
+<body>
+    <h1>ASCII ART RESULT</h1>
+  
+    <textarea name="result"  rows="20" >
+        {{- range $index,$value :=.result}}
+        {{- $value -}}
+        {{end}}
+    </textarea>
+    <form action="/redirectindex" method="get">
+        <button type="submit">Geri Dön</button>
+    </form>
+    <form action="/download" method="get" >
+        <input type="hidden"name="data" value="{{.result}}">
+        <button type="submit">İndir</button>
+    </form>
+    {{ template "footer"}}
+</body>
+{{end }}

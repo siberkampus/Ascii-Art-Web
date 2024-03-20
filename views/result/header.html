@@ -1,0 +1,77 @@
+{{ define "header"}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII ART RESULT</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+        body{
+            margin: 0;
+            background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+             background-size:cover;
+          -webkit-animation: slidein 90s;
+          animation: slidein 90s;
+  
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  
+          -webkit-animation-direction: alternate;
+          animation-direction: alternate;    
+        }
+        @-webkit-keyframes slidein {
+    from {background-position: top; background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+    }
+    
+    @keyframes slidein {
+    from {background-position: top;background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+    
+    }
+        h1{
+            text-align: center;
+            font-family: 'Poppins',sans-serif;
+            font-weight: 50px;
+        }
+        textarea{
+            background-color: #c4add3;
+            width: calc(100% - 6px);
+            border-radius: 15px;
+            text-align: center;
+            resize: none;
+           
+        }
+        button{
+            width: 15%;
+            display: block;
+            height: 35px;
+            margin-left: 42%;
+            margin-top: 10px;
+            background-color: #F6E4F6;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: #E7F5E4;
+            border-radius: 5px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            background-color: black;
+            color: white;
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+{{ end }}
