@@ -51,4 +51,4 @@ docker run Ascii-Art-Web
 ```
 
 ### Author 
-***Muhammed Çelik****
+***Muhammed Çelik***
