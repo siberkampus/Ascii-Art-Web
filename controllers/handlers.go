@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"html/template"
 	"main/calculate"
 	handleerror "main/handleError"
@@ -15,7 +16,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	if handleerror.UndefinedUrl(w, r, "/") {
 		return
 	}
-	view, err := template.ParseFiles("views/show/index.html", "views/show/content.html", "views/show/header.html","views/show/footer.html")
+	view, err := template.ParseFiles("views/show/index.html", "views/show/content.html", "views/show/header.html", "views/show/footer.html")
 	if err != nil {
 		handleerror.StatusInternalServerError(w, r, err)
 		return
@@ -28,6 +29,13 @@ func Result(w http.ResponseWriter, r *http.Request) {
 	}
 	file_name := r.FormValue("file")
 	arguman := r.FormValue("arguman")
+	for _, i := range arguman {
+		if i < 32 || i > 127 {
+			fmt.Fprintf(w, "Invalid characters")
+			return
+
+		}
+	}
 	data := make(map[string][]interface{})
 
 	checkbox := r.Form.Get("check")
@@ -42,7 +50,7 @@ func Result(w http.ResponseWriter, r *http.Request) {
 			calculate.Print(kelimeler, data, files)
 		}
 	}
-	view, err := template.ParseFiles("views/result/index.html", "views/result/header.html", "views/result/content.html","views/result/footer.html")
+	view, err := template.ParseFiles("views/result/index.html", "views/result/header.html", "views/result/content.html", "views/result/footer.html")
 	if err != nil {
 		handleerror.StatusInternalServerError(w, r, err)
 		return
